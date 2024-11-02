@@ -30,7 +30,7 @@ export default function UniqueVisitorCard() {
               color={slot === 'month' ? 'primary' : 'secondary'}
               variant={slot === 'month' ? 'outlined' : 'text'}
             >
-              Month
+              Mes
             </Button>
             <Button
               size="small"
@@ -38,7 +38,7 @@ export default function UniqueVisitorCard() {
               color={slot === 'week' ? 'primary' : 'secondary'}
               variant={slot === 'week' ? 'outlined' : 'text'}
             >
-              Week
+              Semana
             </Button>
           </Stack>
         </Grid>

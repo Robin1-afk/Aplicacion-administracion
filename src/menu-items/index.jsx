@@ -7,7 +7,12 @@ import support from './support';
 // ==============================|| MENU ITEMS ||============================== //
 
 const menuItems = {
-  items: [dashboard, pages, utilities, support]
+  items: [
+    dashboard, //Dashboard
+    // pages, //Pages - Login y register
+    // utilities, // Utilities, funciona para las intrucciónes de la pagina, tipogrfia, color y shadow..
+    support //Documentaciión esencial de la plantilla
+  ] 
 };
 
 export default menuItems;
