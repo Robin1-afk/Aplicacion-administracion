@@ -1,9 +1,9 @@
 // assets
-import { DashboardOutlined } from '@ant-design/icons';
+import { PieChartOutlined , TeamOutlined, SnippetsOutlined } from '@ant-design/icons';
 
 // icons
 const icons = {
-  DashboardOutlined
+  PieChartOutlined , TeamOutlined, SnippetsOutlined
 };
 
 // ==============================|| MENU ITEMS - DASHBOARD ||============================== //
@@ -15,12 +15,29 @@ const dashboard = {
   children: [
     {
       id: 'dashboard',
-      title: 'Dashboard',
+      title: 'Panel',
       type: 'item',
       url: '/dashboard/default',
-      icon: icons.DashboardOutlined,
+      icon: icons.PieChartOutlined ,
+      breadcrumbs: false
+    },
+    {//Colaboradores
+      id: 'OtraPagina',
+      title: 'Colaboradores',
+      type: 'item',
+      url: '/OtraPagina',
+      icon: icons.TeamOutlined,
+      breadcrumbs: false
+    },
+    {//Pedidos
+      id: 'Pedidos',
+      title: 'Pedidos',
+      type: 'item',
+      url: '/Pedidos',
+      icon: icons.SnippetsOutlined,
       breadcrumbs: false
     }
+    
   ]
 };
 
