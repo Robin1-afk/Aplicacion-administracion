@@ -14,10 +14,10 @@ const dashboard = {
   type: 'group',
   children: [
     {
-      id: 'dashboard',
+      id: 'Dashboard',
       title: 'Panel',
       type: 'item',
-      url: '/dashboard/default',
+      url: '/Dashboard',
       icon: icons.PieChartOutlined ,
       breadcrumbs: false
     },
@@ -29,11 +29,11 @@ const dashboard = {
       icon: icons.TeamOutlined,
       breadcrumbs: false
     },
-    {//Pedidos
-      id: 'Pedidos',
-      title: 'Pedidos',
+    {//Negocios
+      id: 'Negocios',
+      title: 'Negocios',
       type: 'item',
-      url: '/Pedidos',
+      url: '/Negocios',
       icon: icons.SnippetsOutlined,
       breadcrumbs: false
     }

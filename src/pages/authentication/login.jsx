@@ -1,32 +1,55 @@
-import { Link } from 'react-router-dom';
+import { useNavigate, Navigate } from "react-router-dom";
+import { login, isAuthenticated } from "../../service/AuthService";
+import { useState } from "react";
 
-// material-ui
-import Grid from '@mui/material/Grid';
-import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
+const Login = () => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
+    const navigate = useNavigate();
 
-// project import
-import AuthWrapper from './AuthWrapper';
-import AuthLogin from './auth-forms/AuthLogin';
+    // Si el usuario ya está autenticado, redirígelo al Negocios
+    if (isAuthenticated()) {
+        return <Navigate to="/Dashboard" />;
+    }
 
-// ================================|| LOGIN ||================================ //
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            await login(email, password);
+            navigate("/Dashboard");
+        } catch (err) {
+            setError(err.message);
+        }
+    };
 
-export default function Login() {
-  return (
-    <AuthWrapper>
-      <Grid container spacing={3}>
-        <Grid item xs={12}>
-          <Stack direction="row" justifyContent="space-between" alignItems="baseline" sx={{ mb: { xs: -0.5, sm: 0.5 } }}>
-            <Typography variant="h3">Login</Typography>
-            <Typography component={Link} to="/register" variant="body1" sx={{ textDecoration: 'none' }} color="primary">
-              Don&apos;t have an account?
-            </Typography>
-          </Stack>
-        </Grid>
-        <Grid item xs={12}>
-          <AuthLogin />
-        </Grid>
-      </Grid>
-    </AuthWrapper>
-  );
-}
+    return (
+        <div>
+            <h2>Iniciar Sesión</h2>
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <label>Email</label>
+                    <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                    />
+                </div>
+                <div>
+                    <label>Contraseña</label>
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
+                </div>
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+            {error && <p style={{ color: "red" }}>{error}</p>}
+        </div>
+    );
+};
+
+export default Login;

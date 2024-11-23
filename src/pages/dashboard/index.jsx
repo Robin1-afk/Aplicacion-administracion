@@ -78,7 +78,7 @@ export default function DashboardDefault() {
         </MainCard>
       </Grid>
 
-      {/* row 3 */}
+      {/* row 3 
       <Grid item xs={12} md={7} lg={8}>
         <Grid container alignItems="center" justifyContent="space-between">
           <Grid item>
@@ -115,8 +115,8 @@ export default function DashboardDefault() {
           <ReportAreaChart />
         </MainCard>
       </Grid>
-
-      {/* row 4 */}
+      */}
+      {/* row 4 
       <Grid item xs={12} md={7} lg={8}>
         <SaleReportCard />
       </Grid>
@@ -223,7 +223,7 @@ export default function DashboardDefault() {
             </Button>
           </Stack>
         </MainCard>
-      </Grid>
+      </Grid>*/}
     </Grid>
   );
 }

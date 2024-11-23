@@ -9,6 +9,7 @@ const Typography = Loadable(lazy(() => import('pages/component-overview/typograp
 const Shadow = Loadable(lazy(() => import('pages/component-overview/shadows')));
 const DashboardDefault = Loadable(lazy(() => import('pages/dashboard/index')));
 const OtraPagina = Loadable(lazy(() => import('pages/dashboard/OrdersTable')));
+const Negocios = Loadable(lazy(() => import('pages/dashboard/Negocios')));
 
 // render - sample page
 const SamplePage = Loadable(lazy(() => import('pages/extra-pages/sample-page')));
@@ -27,15 +28,15 @@ const MainRoutes = {
       path: 'color',
       element: <Color />
     },
-    {
-      path: 'dashboard',
-      children: [
-        {
-          path: 'default',
-          element: <DashboardDefault />
-        }
-      ]
-    },
+    // {
+    //   path: 'dashboard',
+    //   children: [
+    //     {
+    //       path: 'default',
+    //       element: <DashboardDefault />
+    //     }
+    //   ]
+    // },
     {//Pagina defecto
       path: 'Pedidos',
       element: <OtraPagina />
@@ -52,6 +53,13 @@ const MainRoutes = {
     {
       path: 'typography',
       element: <Typography />
+    },
+    {
+      // Ruta protegida para "Negocios"
+      path: '/Negocios',
+      element: (
+          <Negocios />
+      )
     }
   ]
 };
